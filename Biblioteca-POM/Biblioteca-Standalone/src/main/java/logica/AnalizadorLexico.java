@@ -5,8 +5,10 @@ import java.util.ArrayList;
 import util.GestionFichero;
 
 
-
 public class AnalizadorLexico {
+	/**
+	 * HOLA.
+	 */
 	   private static final String [] PALABRAS_RESERVADAS={
 			   "Whole","Word","Decimals","Letter","Method",
 
