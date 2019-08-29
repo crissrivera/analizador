@@ -26,8 +26,10 @@ import util.GestionFichero;
 
 /**
  *
- * @author cristian sinisterra rivera
+ * @author cristian sinisterra
  */
+
+
 public class InterfazFinalAnalixador extends javax.swing.JFrame {
 
     private String titulo = "Analizador Lexico";
