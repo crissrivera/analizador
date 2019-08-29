@@ -26,7 +26,7 @@ import util.GestionFichero;
 
 /**
  *
- * @author cristian sinisterra
+ * @author cristian sinisterra rivera
  */
 
 
