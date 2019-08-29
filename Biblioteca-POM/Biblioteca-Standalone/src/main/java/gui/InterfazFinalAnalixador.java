@@ -41,10 +41,9 @@ public class InterfazFinalAnalixador extends javax.swing.JFrame {
     private String nombreArchivo = "";
     private JButton activarBoton;
     
-    
 
     /**
-     * Creates new form InterfazFinalAnalixador
+     * Creates new form InterfazFinalAnalixador.
      */
     public InterfazFinalAnalixador() {
         initComponents();
