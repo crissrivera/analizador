@@ -5,14 +5,14 @@
  */
 package Controlador;
 
-import Modelo.FlujoCaracteres;
-import Modelo.Lexema;
+import util.FlujoCaracteres;
+import util.Lexema;
 
 /**
  *
  * @author GABRIELA
  */
-public class Analizador_entero {
+public class Analizador_estado {
 
     int cont;
     boolean aceptada;/*para guardar los caratcteres y los va ir separando*/
@@ -24,9 +24,9 @@ public class Analizador_entero {
         car = flujo.getCaracteres();
         aceptada = false;
         q0();
-         if (aceptada) {
+        if (aceptada) {
             AnalizadorLexico.flujo.setPosActual(cont);
-            return new Lexema("entero", "tipo de dato");
+            return new Lexema("estado", "tipo de dato");
         } else {
             return null;
         }
@@ -54,7 +54,7 @@ public class Analizador_entero {
 
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'n') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+            if (car[cont] == 's') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
                 cont++;/*incrememnto mi contador*/
 
@@ -90,7 +90,7 @@ public class Analizador_entero {
 
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'e') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+            if (car[cont] == 'a') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
                 cont++;/*incrememnto mi contador*/
 
@@ -108,7 +108,7 @@ public class Analizador_entero {
 
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'r') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+            if (car[cont] == 'd') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
                 cont++;/*incrememnto mi contador*/
 
@@ -121,7 +121,6 @@ public class Analizador_entero {
             }
         }
     }
-
 
     public void qF() {
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/

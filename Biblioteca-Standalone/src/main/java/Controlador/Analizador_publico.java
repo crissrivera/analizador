@@ -5,27 +5,28 @@
  */
 package Controlador;
 
-import Modelo.FlujoCaracteres;
-import Modelo.Lexema;
+import util.FlujoCaracteres;
+import util.Lexema;
 
 /**
  *
  * @author GABRIELA
  */
-public class Analizador_cambiar {
-     int cont;
+public class Analizador_publico {
+
+    int cont;
     boolean aceptada;/*para guardar los caratcteres y los va ir separando*/
 
     char[] car;
 
-    public Lexema inicio(FlujoCaracteres flujo) {
+   public Lexema inicio(FlujoCaracteres flujo) {
         cont = flujo.getPosActual();
         car = flujo.getCaracteres();
         aceptada = false;
         q0();
-            if (aceptada) {
+        if (aceptada) {
             AnalizadorLexico.flujo.setPosActual(cont);
-            return new Lexema("cambiar", "tipo de dato");
+            return new Lexema("publico", "mdificadores y control de acceso");
         } else {
             return null;
         }
@@ -35,7 +36,7 @@ public class Analizador_cambiar {
 
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'c') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+            if (car[cont] == 'p') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
                 cont++;/*incrememnto mi contador*/
 
@@ -53,7 +54,7 @@ public class Analizador_cambiar {
 
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'a') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+            if (car[cont] == 'u') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
                 cont++;/*incrememnto mi contador*/
 
@@ -71,7 +72,7 @@ public class Analizador_cambiar {
 
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'm') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+            if (car[cont] == 'b') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
                 cont++;/*incrememnto mi contador*/
 
@@ -89,11 +90,11 @@ public class Analizador_cambiar {
 
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'b') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+            if (car[cont] == 'l') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
                 cont++;/*incrememnto mi contador*/
 
-                q4();
+                qF();
 
             } else {
 
@@ -125,7 +126,7 @@ public class Analizador_cambiar {
 
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'a') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+            if (car[cont] == 'c') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
                 cont++;/*incrememnto mi contador*/
 
@@ -142,7 +143,7 @@ public class Analizador_cambiar {
     public void qF() {
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'r') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+            if (car[cont] == 'o') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
                 aceptada = true;
                 cont++;

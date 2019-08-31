@@ -5,8 +5,8 @@
  */
 package Controlador;
 
-import Modelo.FlujoCaracteres;
-import Modelo.Lexema;
+import util.FlujoCaracteres;
+import util.Lexema;
 
 /**
  *

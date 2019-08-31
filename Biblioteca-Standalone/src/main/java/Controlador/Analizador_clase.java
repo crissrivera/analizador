@@ -5,14 +5,14 @@
  */
 package Controlador;
 
-import Modelo.FlujoCaracteres;
-import Modelo.Lexema;
+import util.FlujoCaracteres;
+import util.Lexema;
 
 /**
  *
  * @author GABRIELA
  */
-public class Analizador_bit {
+public class Analizador_clase {
 
     int cont;
     boolean aceptada;/*para guardar los caratcteres y los va ir separando*/
@@ -24,11 +24,10 @@ public class Analizador_bit {
         car = flujo.getCaracteres();
         aceptada = false;
         q0();
-        
-        if(aceptada){
+        if (aceptada) {
             AnalizadorLexico.flujo.setPosActual(cont);
-            return new Lexema("bit", "tipo de dato");
-        }else{
+            return new Lexema("clase", "tipo de dato");
+        } else {
             return null;
         }
     }
@@ -37,7 +36,7 @@ public class Analizador_bit {
 
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'b') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+            if (car[cont] == 'c') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
                 cont++;/*incrememnto mi contador*/
 
@@ -55,7 +54,43 @@ public class Analizador_bit {
 
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'i') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+            if (car[cont] == 'l') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+
+                cont++;/*incrememnto mi contador*/
+
+                q2();
+
+            } else {
+
+                aceptada = false;
+
+            }
+        }
+    }
+
+    public void q2() {
+
+        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
+
+            if (car[cont] == 'a') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+
+                cont++;/*incrememnto mi contador*/
+
+                q3();
+
+            } else {
+
+                aceptada = false;
+
+            }
+        }
+    }
+
+    public void q3() {
+
+        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
+
+            if (car[cont] == 's') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
                 cont++;/*incrememnto mi contador*/
 
@@ -72,7 +107,7 @@ public class Analizador_bit {
     public void qF() {
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 't') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+            if (car[cont] == 'e') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
                 aceptada = true;
                 cont++;
@@ -85,4 +120,5 @@ public class Analizador_bit {
             }
         }
     }
+
 }

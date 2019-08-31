@@ -1,7 +1,7 @@
 package Controlador;
 
-import Modelo.FlujoCaracteres;
-import Modelo.Lexema;
+import util.FlujoCaracteres;
+import util.Lexema;
 import java.util.ArrayList;
 import java.util.List;
 
