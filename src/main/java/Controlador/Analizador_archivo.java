@@ -6,16 +6,14 @@
 package Controlador;
 
 import util.FlujoCaracteres;
-
 import util.Lexema;
 
 /**
  *
- * @author GABRIELA
+ * @author Manuel Alejandro
  */
-public class Analizador_interfaz {
-
-    int cont;
+public class Analizador_archivo {
+      int cont;
     boolean aceptada;/*para guardar los caratcteres y los va ir separando*/
 
     char[] car;
@@ -25,20 +23,20 @@ public class Analizador_interfaz {
         car = flujo.getCaracteres();
         aceptada = false;
         q0();
-         if (aceptada) {
+         if (aceptada== true) {
             AnalizadorLexico.flujo.setPosActual(cont);
-            return new Lexema("interfaz", "estructura de datos");
+
+            return new Lexema("Archivo", "acceso informacion");
         } else {
             return null;
         }
-
     }
 
     public void q0() {
 
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'i') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+            if (car[cont] == 'A') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
                 cont++;/*incrememnto mi contador*/
 
@@ -56,7 +54,7 @@ public class Analizador_interfaz {
 
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'n') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+            if (car[cont] == 'r') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
                 cont++;/*incrememnto mi contador*/
 
@@ -69,12 +67,11 @@ public class Analizador_interfaz {
             }
         }
     }
-
-    public void q2() {
+      public void q2() {
 
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 't') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+            if (car[cont] == 'c') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
                 cont++;/*incrememnto mi contador*/
 
@@ -87,12 +84,11 @@ public class Analizador_interfaz {
             }
         }
     }
-
-    public void q3() {
+          public void q3() {
 
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'e') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+            if (car[cont] == 'h') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
                 cont++;/*incrememnto mi contador*/
 
@@ -105,16 +101,15 @@ public class Analizador_interfaz {
             }
         }
     }
-
     public void q4() {
 
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'r') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+            if (car[cont] == 'i') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
                 cont++;/*incrememnto mi contador*/
 
-                q5();
+                q3();
 
             } else {
 
@@ -123,16 +118,15 @@ public class Analizador_interfaz {
             }
         }
     }
-
-    public void q5() {
+        public void q5() {
 
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'f') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+            if (car[cont] == 'v') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
                 cont++;/*incrememnto mi contador*/
 
-                q6();
+                q3();
 
             } else {
 
@@ -141,29 +135,10 @@ public class Analizador_interfaz {
             }
         }
     }
-
-    public void q6() {
-
-        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
-
-            if (car[cont] == 'a') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
-
-                cont++;/*incrememnto mi contador*/
-
-                qF();
-
-            } else {
-
-                aceptada = false;
-
-            }
-        }
-    }
-
     public void qF() {
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'z') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+            if (car[cont] == 'o') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
                 aceptada = true;
                 cont++;
@@ -176,4 +151,5 @@ public class Analizador_interfaz {
             }
         }
     }
+    
 }

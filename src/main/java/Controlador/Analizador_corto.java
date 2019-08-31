@@ -30,6 +30,7 @@ public class Analizador_corto {
         } else {
             return null;
         }
+
     }
 
     public void q0() {

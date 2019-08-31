@@ -6,6 +6,7 @@
 package Controlador;
 
 import util.FlujoCaracteres;
+
 import util.Lexema;
 
 /**
@@ -30,6 +31,7 @@ public class Analizador_largo {
         } else {
             return null;
         }
+
     }
 
     public void q0() {

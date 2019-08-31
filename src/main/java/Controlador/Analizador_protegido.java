@@ -30,6 +30,7 @@ public class Analizador_protegido {
         } else {
             return null;
         }
+
     }
 
     public void q0() {

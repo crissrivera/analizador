@@ -12,32 +12,30 @@ import util.Lexema;
  *
  * @author GABRIELA
  */
-public class Analizador_si {
-
+public class Analizador_restas {
     int cont;
     boolean aceptada;/*para guardar los caratcteres y los va ir separando*/
 
     char[] car;
 
-   public Lexema inicio(FlujoCaracteres flujo) {
+    public Lexema inicio(FlujoCaracteres flujo) {
         cont = flujo.getPosActual();
         car = flujo.getCaracteres();
         aceptada = false;
-        q0();
+        qF();
         if (aceptada) {
             AnalizadorLexico.flujo.setPosActual(cont);
-           return new Lexema("si", "condicional");
+            return new Lexema("Operador", "operadores aritmeticos");
         } else {
             return null;
         }
-   }
-
+    }
 
     public void q0() {
 
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 's') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+            if (car[cont] == '-') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
                 cont++;/*incrememnto mi contador*/
 
@@ -54,16 +52,17 @@ public class Analizador_si {
     public void qF() {
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'i') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+            if (car[cont] == '-') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
                 aceptada = true;
                 cont++;
                 qF();
-
             } else if (Character.isLetter(car[cont]) || Character.isDigit(car[cont])) {
                 aceptada = false;
                 cont--;
-
+            } else if (car[cont] == ' ') {
+                cont++;
+                aceptada = true;
             }
         }
     }

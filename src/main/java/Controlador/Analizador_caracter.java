@@ -30,6 +30,7 @@ public class Analizador_caracter {
         } else {
             return null;
         }
+
     }
 
     public void q0() {
