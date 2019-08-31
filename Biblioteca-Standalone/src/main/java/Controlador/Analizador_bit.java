@@ -10,15 +10,28 @@ import util.Lexema;
 
 /**
  *
- * @author GABRIELA
+ * @author GABRIELA.
  */
 public class Analizador_bit {
-
+    /**
+     * cont contador.
+     */
     int cont;
+    /**
+     * aceptada.
+     */
     boolean aceptada;/*para guardar los caratcteres y los va ir separando*/
-
+    
+    /**
+     * car arreglo.
+     */
     char[] car;
-
+    
+    /**
+     * Constructor.
+     * @param flujo caracteres que ingresan.
+     * @return si la palbra es aceptada.
+     */
     public Lexema inicio(FlujoCaracteres flujo) {
         cont = flujo.getPosActual();
         car = flujo.getCaracteres();
@@ -32,7 +45,9 @@ public class Analizador_bit {
             return null;
         }
     }
-
+    /**
+     * q0 estado.
+     */
     public void q0() {
 
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
@@ -51,6 +66,9 @@ public class Analizador_bit {
         }
     }
 
+    /**
+     * estado.
+     */
     public void q1() {
 
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
@@ -69,6 +87,9 @@ public class Analizador_bit {
         }
     }
 
+    /**
+     * estado final.
+     */
     public void qF() {
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 

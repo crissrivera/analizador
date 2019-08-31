@@ -13,11 +13,25 @@ import util.Lexema;
  * @author GABRIELA
  */
 public class Analizador_cambiar {
+	/**
+	 * contador.
+	 */
      int cont;
+     /**
+      * si la palabra fue aceptada.
+      */
     boolean aceptada;/*para guardar los caratcteres y los va ir separando*/
 
+    /**
+     * car arreglo de caracteres.
+     */
     char[] car;
 
+    /**
+     * constructor.
+     * @param flujo de caracteres que se ingreso.
+     * @return si fue aceptado.
+     */
     public Lexema inicio(FlujoCaracteres flujo) {
         cont = flujo.getPosActual();
         car = flujo.getCaracteres();
@@ -31,6 +45,9 @@ public class Analizador_cambiar {
         }
     }
 
+    /**
+     * estado.
+     */
     public void q0() {
 
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
@@ -49,6 +66,9 @@ public class Analizador_cambiar {
         }
     }
 
+    /**
+     * estado.
+     */
     public void q1() {
 
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
@@ -67,6 +87,9 @@ public class Analizador_cambiar {
         }
     }
 
+    /**
+     * estado.
+     */
     public void q2() {
 
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
@@ -84,7 +107,9 @@ public class Analizador_cambiar {
             }
         }
     }
-
+    /**
+     * estado.
+     */
     public void q3() {
 
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
@@ -103,6 +128,9 @@ public class Analizador_cambiar {
         }
     }
 
+   /**
+    * estado.
+    */
     public void q4() {
 
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
@@ -121,6 +149,9 @@ public class Analizador_cambiar {
         }
     }
 
+    /**
+     * estado.
+     */
     public void q5() {
 
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
@@ -139,6 +170,9 @@ public class Analizador_cambiar {
         }
     }
 
+    /**
+     * estado final.
+     */
     public void qF() {
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 

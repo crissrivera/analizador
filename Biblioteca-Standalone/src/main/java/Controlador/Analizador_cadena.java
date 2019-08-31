@@ -10,15 +10,29 @@ import util.Lexema;
 
 /**
  *
- * @author GABRIELA
+ * @author GABRIELA.
  */
 public class Analizador_cadena {
 
+	/**
+	 * contador.
+	 */
     int cont;
+    /**
+     * aceptada.
+     */
     boolean aceptada;/*para guardar los caratcteres y los va ir separando*/
 
+    /**
+     * car arreglo
+     */
     char[] car;
 
+    /**
+     * Constructor.
+     * @param flujo de caracteres.
+     * @return si fueron aceptado.
+     */
     public Lexema inicio(FlujoCaracteres flujo) {
         cont = flujo.getPosActual();
         car = flujo.getCaracteres();
@@ -32,6 +46,9 @@ public class Analizador_cadena {
         }
     }
 
+    /**
+     * estado
+     */
     public void q0() {
 
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
@@ -50,6 +67,9 @@ public class Analizador_cadena {
         }
     }
 
+    /**
+     * estado.
+     */
     public void q1() {
 
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
@@ -68,6 +88,9 @@ public class Analizador_cadena {
         }
     }
 
+    /**
+     * estado.
+     */
     public void q2() {
 
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
@@ -86,6 +109,9 @@ public class Analizador_cadena {
         }
     }
 
+    /**
+     * estado.
+     */
     public void q3() {
 
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
@@ -104,6 +130,9 @@ public class Analizador_cadena {
         }
     }
 
+    /**
+     * estado
+     */
     public void q4() {
 
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
@@ -121,7 +150,9 @@ public class Analizador_cadena {
             }
         }
     }
-
+    /**
+     * estado final.
+     */
     public void qF() {
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
