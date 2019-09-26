@@ -35,9 +35,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         btnAnalizar = new javax.swing.JButton();
-        txtIngresar = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        txtMostrar = new javax.swing.JTextArea();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTAPalabras = new javax.swing.JTextArea();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -48,9 +49,22 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        txtMostrar.setColumns(20);
-        txtMostrar.setRows(5);
-        jScrollPane1.setViewportView(txtMostrar);
+        jTAPalabras.setColumns(20);
+        jTAPalabras.setRows(5);
+        jScrollPane2.setViewportView(jTAPalabras);
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Token", "Tipo"
+            }
+        ));
+        jScrollPane3.setViewportView(jTable1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -60,24 +74,26 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 793, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 9, Short.MAX_VALUE))
+                        .addComponent(btnAnalizar, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(txtIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 426, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnAnalizar, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 426, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(120, 120, 120))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAnalizar)
-                    .addComponent(txtIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addComponent(btnAnalizar)
+                .addGap(11, 11, 11)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 191, Short.MAX_VALUE)))
+                .addContainerGap())
         );
 
         pack();
@@ -85,43 +101,55 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void btnAnalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnalizarActionPerformed
         // TODO add your handling code here:
-        String cadena = txtIngresar.getText();
+        String cadena = "";
+        AnalizadorLexico.listLexema.removeAll(AnalizadorLexico.listLexema);
 
         char[] caracteres;
-        caracteres = cadena.toCharArray();
+        if (jTAPalabras.getText().equals("")) {
 
-        FlujoCaracteres ca = new FlujoCaracteres(0, caracteres);
-        AnalizadorLexico al = new AnalizadorLexico();
-        al.analizar(ca);
-       
+        } else {
+            String chat = "";
+            cadena = jTAPalabras.getText();
+            String[] lineas = cadena.split("\n");
+            System.out.println(lineas);
+            for (int i = 0; i < lineas.length; i++) {
+                chat = chat+" "+lineas[i];
 
-            for (int i = 0; i < al.getListLexema().size(); i++) {
-
-                
-                    txtMostrar.setText(" Token" + " - " + al.getListLexema().get(i).getToken()
-                            + "\n Tipo" + " - " + al.getListLexema().get(i).getTipoLexema());
-                
-            
             }
+            caracteres = chat.toCharArray();
+            FlujoCaracteres ca = new FlujoCaracteres(0, caracteres);
+            AnalizadorLexico al = new AnalizadorLexico();
+            al.analizar(ca);
+            tablaLexemas();
+        }
+
+//            for (int i = 0; i < al.getListLexema().size(); i++) {
+//
+//                
+//                    txtMostrar.setText(" Token" + " - " + al.getListLexema().get(i).getToken()
+//                            + "\n Tipo" + " - " + al.getListLexema().get(i).getTipoLexema());
+//                
+//            
+//            }
 
     }//GEN-LAST:event_btnAnalizarActionPerformed
 
-    public DefaultTableModel tablaLexemas(ArrayList<Lexema> listaLexemas) {
+    public void tablaLexemas() {
         DefaultTableModel model = new DefaultTableModel();
 
         model.addColumn("Token");
         model.addColumn("Tipo Lexema");
 
-        for (int i = 0; i < listaLexemas.size(); i++) {
+        for (int i = 0; i < AnalizadorLexico.listLexema.size(); i++) {
             model.addRow(new Object[]{
                 (i + 1),
-                listaLexemas.get(i).getToken(),
-                listaLexemas.get(i).getTipoLexema()
+                AnalizadorLexico.listLexema.get(i).getToken(),
+                AnalizadorLexico.listLexema.get(i).getTipoLexema()
 
             });
         }
 
-        return model;
+        jTable1.setModel(model);
     }
 
     public static void main(String args[]) {
@@ -158,8 +186,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAnalizar;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField txtIngresar;
-    private javax.swing.JTextArea txtMostrar;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTextArea jTAPalabras;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }
