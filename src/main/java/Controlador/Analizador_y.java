@@ -14,41 +14,41 @@ import util.Lexema;
  */
 public class Analizador_y {
 
-    int cont;
-    boolean aceptada;/*para guardar los caratcteres y los va ir separando*/
+  int cont;
+  boolean aceptada;/* para guardar los caratcteres y los va ir separando */
 
-    char[] car;
+  char[] car;
 
-    public Lexema inicio(FlujoCaracteres flujo) {
-        cont = flujo.getPosActual();
-        car = flujo.getCaracteres();
-        aceptada = false;
+  public Lexema inicio(FlujoCaracteres flujo) {
+    cont = flujo.getPosActual();
+    car = flujo.getCaracteres();
+    aceptada = false;
+    qF();
+    if (aceptada == true) {
+      AnalizadorLexico.flujo.setPosActual(cont);
+
+      return new Lexema("y", "Operadores relacionales");
+    } else {
+      return null;
+    }
+
+  }
+
+  public void qF() {
+    if (cont < car.length) {
+
+      if (car[cont] == '=') {
+
+        aceptada = true;
+        cont++;
         qF();
-        if (aceptada == true) {
-            AnalizadorLexico.flujo.setPosActual(cont);
 
-            return new Lexema("y", "Operadores relacionales");
-        } else {
-            return null;
-        }
+      } else if (Character.isLetter(car[cont]) || Character.isDigit(car[cont])) {
+        aceptada = false;
+        cont--;
 
+      }
     }
-
-    public void qF() {
-        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
-
-            if (car[cont] == '=') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
-
-                aceptada = true;
-                cont++;
-                qF();
-
-            } else if (Character.isLetter(car[cont]) || Character.isDigit(car[cont])) {
-                aceptada = false;
-                cont--;
-
-            }
-        }
-    }
+  }
 
 }
