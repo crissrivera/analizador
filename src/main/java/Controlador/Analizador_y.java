@@ -37,7 +37,7 @@ public class Analizador_y {
   public void qF() {
     if (cont < car.length) {
 
-      if (car[cont] == '=') {
+      if (car[cont] == 'y') {
 
         aceptada = true;
         cont++;

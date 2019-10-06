@@ -16,7 +16,7 @@ public class AnalizadoryTest {
   @Test
   public void TestAutomatayCorrecto() {
       Analizador_y fun = new Analizador_y();
-      char[] caracteres = "=".toCharArray();
+      char[] caracteres = "y".toCharArray();
       Lexema resultado = fun.inicio(new FlujoCaracteres(0, caracteres));
       int esperado = 1;
       int resultadoMetodo;

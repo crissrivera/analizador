@@ -25,7 +25,7 @@ public class Analizador_restas {
     qF();
     if (aceptada) {
       AnalizadorLexico.flujo.setPosActual(cont);
-      return new Lexema("Operador", "operadores aritmeticos");
+      return new Lexema("-", "operadores aritmeticos");
     } else {
       return null;
     }

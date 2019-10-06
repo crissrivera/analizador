@@ -96,7 +96,7 @@ public class Analizador_publico {
 
         cont++;/* incrememnto mi contador */
 
-        qF();
+        q4();
 
       } else {
 

@@ -13,7 +13,7 @@ public class AnalizadordwTest {
   @Test
   public void TestAutomataDwCorrecto() {
     Analizador_dw fun = new Analizador_dw();
-    char[] caracteres = "dw".toCharArray();
+    char[] caracteres = "dw()".toCharArray();
     Lexema resultado = fun.inicio(new FlujoCaracteres(0, caracteres));
     int esperado = 1;
     int resultadoMetodo;

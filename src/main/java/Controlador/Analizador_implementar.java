@@ -131,7 +131,7 @@ public class Analizador_implementar {
 
         cont++;/* incrememnto mi contador */
 
-        qF();
+        q6();
 
       } else {
 

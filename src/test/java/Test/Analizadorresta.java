@@ -13,7 +13,7 @@ public class Analizadorresta {
   @Test
   public void TestAutomataRestaCorrecto() {
       Analizador_resta fun = new Analizador_resta();
-      char[] caracteres = "-".toCharArray();
+      char[] caracteres = "resta".toCharArray();
       Lexema resultado = fun.inicio(new FlujoCaracteres(0, caracteres));
       int esperado = 1;
       int resultadoMetodo;

@@ -95,7 +95,7 @@ public class Analizador_protegido {
 
         cont++;/* incrememnto mi contador */
 
-        qF();
+        q4();
 
       } else {
 

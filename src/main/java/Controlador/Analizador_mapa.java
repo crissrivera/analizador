@@ -15,94 +15,94 @@ import util.Lexema;
  */
 public class Analizador_mapa {
 
-    int cont;
-    boolean aceptada;/*para guardar los caratcteres y los va ir separando*/
+  int cont;
+  boolean aceptada;/* para guardar los caratcteres y los va ir separando */
 
-    char[] car;
+  char[] car;
 
-   public Lexema inicio(FlujoCaracteres flujo) {
-        cont = flujo.getPosActual();
-        car = flujo.getCaracteres();
+  public Lexema inicio(FlujoCaracteres flujo) {
+    cont = flujo.getPosActual();
+    car = flujo.getCaracteres();
+    aceptada = false;
+    q0();
+    if (aceptada) {
+      AnalizadorLexico.flujo.setPosActual(cont);
+      return new Lexema("mapa", "estructura de datos");
+    } else {
+      return null;
+    }
+
+  }
+
+  public void q0() {
+
+    if (cont < car.length) {/* cuantos espacios tiene mi arreglo */
+
+      if (car[cont] == 'm') {/* el arreglo car en el contador 0 lo vamos a comparar si es = a */
+
+        cont++;/* incrememnto mi contador */
+
+        q1();
+
+      } else {
+
         aceptada = false;
-        q0();
-         if (aceptada) {
-            AnalizadorLexico.flujo.setPosActual(cont);
-            return new Lexema("mapa", "estructura de datos");
-        } else {
-            return null;
-        }
 
+      }
     }
+  }
 
-    public void q0() {
+  public void q1() {
 
-        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
+    if (cont < car.length) {/* cuantos espacios tiene mi arreglo */
 
-            if (car[cont] == 'm') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+      if (car[cont] == 'a') {/* el arreglo car en el contador 0 lo vamos a comparar si es = a */
 
-                cont++;/*incrememnto mi contador*/
+        cont++;/* incrememnto mi contador */
 
-                q1();
+        q2();
 
-            } else {
+      } else {
 
-                aceptada = false;
+        aceptada = false;
 
-            }
-        }
+      }
     }
+  }
 
-    public void q1() {
+  public void q2() {
 
-        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
+    if (cont < car.length) {/* cuantos espacios tiene mi arreglo */
 
-            if (car[cont] == 'a') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+      if (car[cont] == 'p') {/* el arreglo car en el contador 0 lo vamos a comparar si es = a */
 
-                cont++;/*incrememnto mi contador*/
+        cont++;/* incrememnto mi contador */
 
-                q2();
+        qF();
 
-            } else {
+      } else {
 
-                aceptada = false;
+        aceptada = false;
 
-            }
-        }
+      }
     }
+  }
 
-    public void q2() {
+  public void qF() {
+    if (cont < car.length) {/* cuantos espacios tiene mi arreglo */
 
-        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
+      if (car[cont] == 'a') {/* el arreglo car en el contador 0 lo vamos a comparar si es = a */
 
-            if (car[cont] == 'p') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+        aceptada = true;
+        cont++;
+        qF();
 
-                cont++;/*incrememnto mi contador*/
+      } else if (Character.isLetter(car[cont]) || Character.isDigit(car[cont])) {
+        aceptada = false;
+        cont--;
 
-                qF();
-
-            } else {
-
-                aceptada = false;
-
-            }
-        }
+      }
     }
-
-    public void qF() {
-        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
-
-            if (car[cont] == 'a') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
-
-                aceptada = true;
-                cont++;
-                qF();
-
-            } else if (Character.isLetter(car[cont]) || Character.isDigit(car[cont])) {
-                aceptada = false;
-                cont--;
-
-            }
-        }
-    }
+  }
 
 }

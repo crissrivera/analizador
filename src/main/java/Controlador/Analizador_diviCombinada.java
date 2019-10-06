@@ -22,7 +22,7 @@ public class Analizador_diviCombinada {
     cont = flujo.getPosActual();
     car = flujo.getCaracteres();
     aceptada = false;
-    qF();
+    q0();
     if (aceptada) {
       AnalizadorLexico.flujo.setPosActual(cont);
       return new Lexema("Operador", "operadores aritmeticos");

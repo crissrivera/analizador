@@ -13,7 +13,7 @@ public class AnalizadorlistMapTest {
   @Test
   public void TestAutomataListMapCorrecto() {
     Analizador_listMapa fun = new Analizador_listMapa();
-    char[] caracteres = "caracter".toCharArray();
+    char[] caracteres = "listMapa()".toCharArray();
     Lexema resultado = fun.inicio(new FlujoCaracteres(0, caracteres));
     int esperado = 1;
     int resultadoMetodo;

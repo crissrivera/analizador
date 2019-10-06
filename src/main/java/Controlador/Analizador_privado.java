@@ -94,7 +94,7 @@ public class Analizador_privado {
 
         cont++;/* incrememnto mi contador */
 
-        qF();
+        q4();
 
       } else {
 
