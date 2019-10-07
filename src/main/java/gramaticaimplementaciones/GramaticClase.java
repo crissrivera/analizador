@@ -8,6 +8,7 @@ import SentenciaImplementaciones.DeclaradorVariable;
 import SentenciaImplementaciones.Expresion;
 import SentenciaImplementaciones.Main;
 import SentenciaImplementaciones.Metodo;
+import excepciones.SintacticException;
 import gramaticasdefiniciones.Gramatica;
 import util.Lexema;
 

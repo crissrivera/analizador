@@ -15,60 +15,61 @@ import util.Lexema;
  */
 public class Constructor extends Sentencia {
 
-    Lexema nombre;
+  Lexema nombre;
 
-    Lista<Parametro> listaParametros;
+  Lista<Parametro> listaParametros;
 
-    Lista<Sentencia> listaSentencia;
+  Lista<Sentencia> listaSentencia;
 
-    public Constructor(Lexema nombre, Lista<Parametro> listaParametros, Lista<Sentencia> listaSentencia) {
-        this.nombre = nombre;
-        this.listaParametros = listaParametros;
-        this.listaSentencia = listaSentencia;
-    }
+  public Constructor(Lexema nombre, Lista<Parametro> listaParametros, Lista<Sentencia> listaSentencia) {
+    this.nombre = nombre;
+    this.listaParametros = listaParametros;
+    this.listaSentencia = listaSentencia;
+  }
 
-    public Constructor() {
-        listaParametros = new Lista<>();
-        listaSentencia = new Lista<>();
-    }
+  public Constructor() {
+    listaParametros = new Lista<>();
+    listaSentencia = new Lista<>();
+  }
 
-    public Lexema getNombre() {
-        return nombre;
-    }
+  public Lexema getNombre() {
+    return nombre;
+  }
 
-    public void setNombre(Lexema nombre) {
-        this.nombre = nombre;
-    }
+  public void setNombre(Lexema nombre) {
+    this.nombre = nombre;
+  }
 
-    public Lista<Parametro> getListaParametros() {
-        return listaParametros;
-    }
+  public Lista<Parametro> getListaParametros() {
+    return listaParametros;
+  }
 
-    public void setListaParametros(Lista<Parametro> listaParametros) {
-        this.listaParametros = listaParametros;
-    }
+  public void setListaParametros(Lista<Parametro> listaParametros) {
+    this.listaParametros = listaParametros;
+  }
 
-    public Lista<Sentencia> getListaSentencia() {
-        return listaSentencia;
-    }
+  public Lista<Sentencia> getListaSentencia() {
+    return listaSentencia;
+  }
 
-    public void setListaSentencia(Lista<Sentencia> listaSentencia) {
-        this.listaSentencia = listaSentencia;
-    }
+  public void setListaSentencia(Lista<Sentencia> listaSentencia) {
+    this.listaSentencia = listaSentencia;
+  }
 
-    @Override
-    public List<Sentencia> llenarHijos() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+  @Override
+  public List<Sentencia> llenarHijos() {
+    throw new UnsupportedOperationException("Not supported yet.");
 
-    @Override
-    public String toString() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+  }
 
-    @Override
-    public String parse() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+  @Override
+  public String toString() {
+    throw new UnsupportedOperationException("Not supported yet.");
+  }
+
+  @Override
+  public String parse() {
+    throw new UnsupportedOperationException("Not supported yet.");
+  }
 
 }

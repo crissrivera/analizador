@@ -1,7 +1,9 @@
 package gramaticaimplementaciones;
 
 import Sentencia.Sentencia;
+import SentenciaImplementaciones.Atributo;
 import SentenciaImplementaciones.Main;
+import excepciones.SintacticException;
 import gramaticasdefiniciones.Gramatica;
 import util.Lexema;
 

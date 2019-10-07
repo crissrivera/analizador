@@ -6,6 +6,7 @@ import SentenciaImplementaciones.Lista;
 import SentenciaImplementaciones.Metodo;
 import SentenciaImplementaciones.Parametro;
 import SentenciaImplementaciones.SI;
+import excepciones.SintacticException;
 import gramaticasdefiniciones.Gramatica;
 import util.Lexema;
 

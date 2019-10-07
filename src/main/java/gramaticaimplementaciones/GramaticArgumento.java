@@ -3,6 +3,7 @@ package gramaticaimplementaciones;
 
 import Sentencia.Sentencia;
 import SentenciaImplementaciones.Argumento;
+import excepciones.SintacticException;
 import gramaticasdefiniciones.Gramatica;
 import util.Lexema;
 
