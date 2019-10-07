@@ -15,42 +15,44 @@ import java.util.List;
  */
 public class BloqueSentencia extends Sentencia {
 
-    Sentencia sentencia;
+  Sentencia sentencia;
 
-    public BloqueSentencia(Sentencia sentencia) {
-        this.sentencia = sentencia;
-    }
+  public BloqueSentencia(Sentencia sentencia) {
+    this.sentencia = sentencia;
+  }
 
-    public BloqueSentencia() {
+  public BloqueSentencia() {
 
-    }
+  }
 
-    public Sentencia getSentencia() {
-        return sentencia;
-    }
+  public Sentencia getSentencia() {
+    return sentencia;
+  }
 
-    public void setSentencia(Sentencia sentencia) {
-        this.sentencia = sentencia;
-    }
+  public void setSentencia(Sentencia sentencia) {
+    this.sentencia = sentencia;
+  }
 
-    @Override
-    public List<Sentencia> llenarHijos() {
+  @Override
+  public List<Sentencia> llenarHijos() {
 
-        hijos = new ArrayList<>();
+    hijos = new ArrayList<>();
 
-        hijos.add(sentencia);
+    hijos.add(sentencia);
 
-        return hijos;
+    return hijos;
 
-    }
+  }
 
-    @Override
-    public String toString() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+  @Override
+  public String toString() {
+    throw new UnsupportedOperationException("Not supported yet."); 
+                                                                   
+  }
 
-    @Override
-    public String parse() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+  @Override
+  public String parse() {
+    throw new UnsupportedOperationException("Not supported yet."); 
+                                                                   
+  }
 }
