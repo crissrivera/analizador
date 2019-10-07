@@ -1,0 +1,48 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Controlador;
+
+import util.FlujoCaracteres;
+import util.Lexema;
+
+/**
+ *
+ * @author Crist
+ */
+public class Analizador_Punto {
+      int cont;
+  boolean aceptada;
+   char[] car;
+   
+   
+    public Lexema inicio(FlujoCaracteres flujo) {
+        cont = flujo.getPosActual();
+        
+        car = flujo.getCaracteres();
+        aceptada = false;
+        q0F();
+         if (aceptada == true) {
+      AnalizadorLexico.flujo.setPosActual(cont);
+
+      return new Lexema(".", "Punto");
+    } else {
+      return null;
+    }
+    }
+    
+    
+    public void q0F() {
+        if (cont < car.length) {
+
+            if (car[cont] == '.' && aceptada == false) {
+                cont++;
+                aceptada = true;
+                q0F();
+
+            } 
+        }
+    }
+}

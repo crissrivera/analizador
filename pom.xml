@@ -8,11 +8,6 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
      <artifactId>Biblioteca-Standalone</artifactId>
      <packaging>jar</packaging>
     <version>0.0.1-SNAPSHOT</version>
-
-
-  <dependencies>
-
-  </dependencies>
   
   <properties>
 		<java.version>1.8</java.version>
@@ -43,4 +38,11 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
             </plugin>
 		</plugins>
 	</build>
+    <dependencies>
+        <dependency>
+            <groupId>org.netbeans.external</groupId>
+            <artifactId>AbsoluteLayout</artifactId>
+            <version>RELEASE111</version>
+        </dependency>
+    </dependencies>
 </project>

@@ -78,7 +78,13 @@ public class AnalizadorLexico {
       Analizador_si();
       Analizador_tiempo();
       Analizador_entonces();
-
+      AnalizadorParentesisClosed();
+      AnalizadorParenteisis();
+      punto();
+      puntoyComa();
+      incrementado();
+      corchete();
+      corcheteCerrado();
     } while (flujo.getPosActual() < flujo.getCaracteres().length);
 
   }
@@ -127,6 +133,61 @@ public class AnalizadorLexico {
         }
       }
     }
+  }
+  
+  public void corchete(){
+      Analizador_Corchete not = new Analizador_Corchete();
+       lexe = not.inicio(flujo);
+      if (lexe != null) {
+          listLexema.add(lexe);
+      }
+  }
+  
+   public void corcheteCerrado(){
+       Analizador_CorcheteCerrado not= new Analizador_CorcheteCerrado();
+        lexe = not.inicio(flujo);
+      if (lexe != null) {
+          listLexema.add(lexe);
+      }
+   }
+  
+  public void incrementado(){
+      Analizador_incrementador not=new Analizador_incrementador();
+       lexe = not.inicio(flujo);
+      if (lexe != null) {
+          listLexema.add(lexe);
+      }
+  }
+  public void punto(){
+      Analizador_Punto not= new Analizador_Punto();
+       lexe = not.inicio(flujo);
+      if (lexe != null) {
+          listLexema.add(lexe);
+      }
+  }
+  
+  public void puntoyComa(){
+      Analizador_puntoComa not=new Analizador_puntoComa();
+       lexe = not.inicio(flujo);
+      if (lexe != null) {
+          listLexema.add(lexe);
+      }
+  }
+  
+  public void AnalizadorParentesisClosed(){
+      Analizador_ParentesisClosed not= new Analizador_ParentesisClosed();
+      lexe = not.inicio(flujo);
+      if (lexe != null) {
+          listLexema.add(lexe);
+      }
+  }
+  
+  public void AnalizadorParenteisis(){
+      Analizador_parentesisOpen not=new Analizador_parentesisOpen();
+     lexe = not.inicio(flujo);
+      if (lexe != null) {
+          listLexema.add(lexe);
+      }  
   }
 
   public void Analizador_bit() {
